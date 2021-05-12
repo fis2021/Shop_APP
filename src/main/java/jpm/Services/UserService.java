@@ -57,6 +57,11 @@ public class UserService {
         }
     }
 
+    public static boolean checkPassword(String pass_from_data,String pass_from_form,String username)
+    {
+        if(Objects.equals(pass_from_data,encodePassword(username,pass_from_form))) return true;
+        else return false;
+    }
     private static String encodePassword(String salt, String password) {
         MessageDigest md = getMessageDigest();
         md.update(salt.getBytes(StandardCharsets.UTF_8));
