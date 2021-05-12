@@ -1,0 +1,8 @@
+jpm\model\User.class
+jpm\controllers\RegistrationController.class
+jpm\Services\FileSystemService.class
+jpm\Services\UserService.class
+jpm\exceptions\CouldNotWriteUsersException.class
+jpm\Main.class
+jpm\exceptions\UsernameAlreadyExistsException.class
+jpm\Services\UserService$1.class
