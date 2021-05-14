@@ -16,6 +16,14 @@ import javafx.scene.control.*;
 public class MenuController implements Initializable {
     @FXML
     private AnchorPane Listpane;
+    @FXML
+    private AnchorPane mainwindow;
+    @FXML
+    public void handleClose() {
+        Stage stage = (Stage) mainwindow.getScene().getWindow();
+        stage.close();
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources)
     {
@@ -26,5 +34,19 @@ public class MenuController implements Initializable {
             e.printStackTrace();
         }
         Listpane.getChildren().setAll(pane);
+    }
+    public void sing_out()
+    {
+        Parent root = null;
+        try {
+            root = FXMLLoader.load(getClass().getClassLoader().getResource("login.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Stage backtologin = new Stage();
+        backtologin.setScene(new Scene(root));
+        backtologin.setResizable(false);
+        handleClose();
+        backtologin.show();
     }
 }

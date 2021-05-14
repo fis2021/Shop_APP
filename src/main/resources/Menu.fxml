@@ -5,12 +5,12 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="538.0" prefWidth="770.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jpm.controllers.MenuController">
+<AnchorPane fx:id="mainwindow" prefHeight="538.0" prefWidth="770.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jpm.controllers.MenuController">
    <children>
       <Button layoutX="48.0" layoutY="252.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="194.0" text="Add a Product" />
       <Circle fill="DODGERBLUE" layoutX="144.0" layoutY="123.0" radius="70.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
       <Button layoutX="48.0" layoutY="284.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="194.0" text="View my producs" />
-      <Button layoutX="48.0" layoutY="315.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="194.0" text="Sing out" />
+      <Button layoutX="48.0" layoutY="315.0" mnemonicParsing="false" onAction="#sing_out" prefHeight="25.0" prefWidth="194.0" text="Sing out" />
       <Text fill="#113c14" layoutX="78.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Balance :" />
       <AnchorPane fx:id="Listpane" layoutX="274.0" layoutY="42.0" prefHeight="454.0" prefWidth="469.0" />
    </children>
