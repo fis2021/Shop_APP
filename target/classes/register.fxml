@@ -10,7 +10,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jpm.controllers.RegistrationController">
+<AnchorPane maxHeight="800" maxWidth="800" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jpm.controllers.RegistrationController">
    <children>
       <Text id="title-text" layoutX="385.0" layoutY="126.0" text="Shop-app" textAlignment="CENTER" wrappingWidth="148.265625" />
       <Label layoutX="321.0" layoutY="144.0" text="Username:" />

@@ -10,20 +10,22 @@ import jpm.Services.UserService;
 
 public class Main extends Application {
 
+    private Parent root;
     public static void main(String[] args) {
         launch(args);
     }
 
-    @Override
+
     public void start(Stage primaryStage) throws Exception {
 
         UserService.loadUsersFromFile();
         ProductService.loadProductsFromFile();
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("login.fxml"));
+        root = FXMLLoader.load(getClass().getClassLoader().getResource("login.fxml"));
         primaryStage.setTitle("Shopp-App");
         primaryStage.setScene(new Scene(root));
         primaryStage.setResizable(false);
         primaryStage.show();
+
        /* Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("register.fxml"));
         primaryStage.setTitle("Shopp-App");
         primaryStage.setScene(new Scene(root));

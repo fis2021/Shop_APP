@@ -14,6 +14,7 @@ import jpm.Services.FileSystemService;
 import jpm.Services.UserService;
 import jpm.model.User;
 import org.apache.commons.io.FileUtils;
+import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -31,7 +32,13 @@ public class LoginController {
     private PasswordField passwordField;
     @FXML
     private TextField usernameField;
-
+    @FXML
+    private AnchorPane mainwindow;
+    @FXML
+    public void handleClose() {
+        Stage stage = (Stage) mainwindow.getScene().getWindow();
+        stage.close();
+    }
 
 
     private String usernameb;
@@ -68,7 +75,15 @@ public class LoginController {
         for (User user : users) {
             if (Objects.equals(usernameb, user.getUsername()))
             {
-                if (checkPassword(user.getPassword(),passwordb,user.getUsername())){loginMessage.setText("You logged in !");ok=1;}
+                if (checkPassword(user.getPassword(),passwordb,user.getUsername())){loginMessage.setText("You logged in !");ok=1;
+                    Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Menu.fxml"));
+                    Stage menu_start = new Stage();
+                    menu_start.setTitle("Menu");
+                    menu_start.setScene(new Scene(root));
+                    menu_start.setResizable(false);
+                    menu_start.show();
+                    handleClose();
+                }
                 else {loginMessage.setText("Your Password is wrong! Try again !");ok=1;}
 
             }
