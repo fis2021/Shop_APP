@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="org.fisproject.jpm" />
+        <module name="org.fis_project.jpm" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
