@@ -23,7 +23,7 @@ import java.util.Objects;
 public class ProductService {
 
     private static List<Product> Products;
-    private static final Path PRODUCT_PATH = FileSystemService.getPathToFile("config", "products.json");
+    private static final Path PRODUCT_PATH = FileSystemService.getPathToFile("config","products.json");
 
     public static void loadProductsFromFile() throws IOException {
 
@@ -37,10 +37,10 @@ public class ProductService {
         });
     }
 
-    public static void addProduct (String product_name, String product_description, String path_to_image, float price, User owner) throws ProductsAlreadyExistsException {
-        checkProductDoesNotAlreadyExist(product_name, owner.getUsername());
+    public static void addProduct (String product_name, String product_description, String path_to_image, float price, String owner) throws ProductsAlreadyExistsException {
+        checkProductDoesNotAlreadyExist(product_name, owner);
         Products.add(new Product(product_name,product_description,path_to_image,price,owner));
-        persistUsers();
+        persistProduct();
     }
 
     private static void checkProductDoesNotAlreadyExist(String productname,String productowner) throws ProductsAlreadyExistsException {
@@ -50,7 +50,7 @@ public class ProductService {
         }
     }
 
-    private static void persistUsers() {
+    private static void persistProduct() {
         try {
             ObjectMapper objectMapper = new ObjectMapper();
             objectMapper.writerWithDefaultPrettyPrinter().writeValue(PRODUCT_PATH.toFile(),Products);

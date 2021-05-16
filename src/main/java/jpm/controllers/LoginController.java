@@ -13,6 +13,7 @@ import javafx.stage.Stage;
 import jpm.Services.FileSystemService;
 import jpm.Services.UserService;
 import jpm.model.User;
+import jpm.Services.LoginService;
 import org.apache.commons.io.FileUtils;
 import javafx.scene.layout.AnchorPane;
 
@@ -23,6 +24,7 @@ import java.util.List;
 import java.util.Objects;
 
 import static jpm.Services.UserService.checkPassword;
+import static jpm.Services.LoginService.set_current_user;
 
 public class LoginController {
 
@@ -83,6 +85,8 @@ public class LoginController {
                     menu_start.setResizable(false);
                     menu_start.show();
                     handleClose();
+                    set_current_user(user);
+
                 }
                 else {loginMessage.setText("Your Password is wrong! Try again !");ok=1;}
 

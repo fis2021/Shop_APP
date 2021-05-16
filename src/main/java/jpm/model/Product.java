@@ -5,12 +5,12 @@ public class Product {
     private String product_description;
     private String path_to_image;
     private float price;
-    private User owner;
+    private String owner;
 
     public Product() {
     }
 
-    public Product(String product_name,String product_description,String path_to_image,float price,User owner)
+    public Product(String product_name,String product_description,String path_to_image,float price,String owner)
     {
         this.product_name = product_name;
         this.product_description = product_description;
@@ -33,7 +33,7 @@ public class Product {
         return price;
     }
 
-    public User getOwner() {
+    public String getOwner() {
         return owner;
     }
 
@@ -41,7 +41,7 @@ public class Product {
         return path_to_image;
     }
 
-    public void setOwner(User owner) {
+    public void setOwner(String owner) {
         this.owner = owner;
     }
 

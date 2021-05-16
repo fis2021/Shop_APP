@@ -49,4 +49,18 @@ public class MenuController implements Initializable {
         handleClose();
         backtologin.show();
     }
+    public void add_product()
+    {
+        Parent root = null;
+        try {
+            root = FXMLLoader.load(getClass().getClassLoader().getResource("add_product.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Stage add_product = new Stage();
+        add_product.setTitle("Shopp-App");
+        add_product.setScene(new Scene(root));
+        add_product.setResizable(false);
+        add_product.show();
+    }
 }
