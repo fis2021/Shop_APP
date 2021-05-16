@@ -23,8 +23,8 @@ import java.nio.file.Path;
 import java.util.List;
 import java.util.Objects;
 
+import static jpm.Services.LoginService.*;
 import static jpm.Services.UserService.checkPassword;
-import static jpm.Services.LoginService.set_current_user;
 
 public class LoginController {
 
@@ -78,14 +78,26 @@ public class LoginController {
             if (Objects.equals(usernameb, user.getUsername()))
             {
                 if (checkPassword(user.getPassword(),passwordb,user.getUsername())){loginMessage.setText("You logged in !");ok=1;
-                    Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Menu.fxml"));
+                    set_current_user(user);
+                    if(ifseller()){
+                    Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("MenuSeller.fxml"));
                     Stage menu_start = new Stage();
                     menu_start.setTitle("Menu");
                     menu_start.setScene(new Scene(root));
                     menu_start.setResizable(false);
                     menu_start.show();
                     handleClose();
-                    set_current_user(user);
+                    }
+                    else{
+                        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("MenuBuyer.fxml"));
+                        Stage menu_start = new Stage();
+                        menu_start.setTitle("Menu");
+                        menu_start.setScene(new Scene(root));
+                        menu_start.setResizable(false);
+                        menu_start.show();
+                        handleClose();
+                    }
+
 
                 }
                 else {loginMessage.setText("Your Password is wrong! Try again !");ok=1;}

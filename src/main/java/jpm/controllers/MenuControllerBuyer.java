@@ -4,19 +4,17 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import javafx.scene.Scene;
-import java.io.IOException;
-import java.net.URL;
-import java.util.Objects;
-import java.util.ResourceBundle;
-
-import javafx.scene.control.*;
 import jpm.Services.LoginService;
 
-public class MenuController implements Initializable {
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class MenuControllerBuyer implements Initializable {
     @FXML
     private AnchorPane Listpane;
     @FXML
@@ -29,19 +27,19 @@ public class MenuController implements Initializable {
         stage.close();
     }
 
-    public static AnchorPane pane;
+    public static AnchorPane paneb;
 
     @Override
     public void initialize(URL location, ResourceBundle resources)
     {
         balance.setText("Balance :"+ LoginService.get_balance());
-         pane = null;
+         paneb = null;
         try {
-            pane = FXMLLoader.load(getClass().getClassLoader().getResource("list_holder.fxml"));
+            paneb = FXMLLoader.load(getClass().getClassLoader().getResource("list_holder.fxml"));
         } catch (IOException e) {
             e.printStackTrace();
         }
-        Listpane.getChildren().setAll(pane);
+        Listpane.getChildren().setAll(paneb);
     }
     public void sing_out()
     {
@@ -57,18 +55,18 @@ public class MenuController implements Initializable {
         handleClose();
         backtologin.show();
     }
-    public void add_product()
+    public void add_funds()
     {
         Parent root = null;
         try {
-            root = FXMLLoader.load(getClass().getClassLoader().getResource("add_product.fxml"));
+            root = FXMLLoader.load(getClass().getClassLoader().getResource("add_funds.fxml"));
         } catch (IOException e) {
             e.printStackTrace();
         }
-        Stage add_product = new Stage();
-        add_product.setTitle("Shopp-App");
-        add_product.setScene(new Scene(root));
-        add_product.setResizable(false);
-        add_product.show();
+        Stage add_funds = new Stage();
+        add_funds.setTitle("Shopp-App");
+        add_funds.setScene(new Scene(root));
+        add_funds.setResizable(false);
+        add_funds.show();
     }
 }

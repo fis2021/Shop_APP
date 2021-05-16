@@ -48,6 +48,14 @@ public class UserService {
         }
     }
 
+    public static void updatebBalance(String username,float balance) {
+        for (User user : users) {
+            if (Objects.equals(username, user.getUsername()))user.setBalance(user.getBalance()+(float)balance);
+            persistUsers();
+        }
+    }
+
+
     private static void persistUsers() {
         try {
             ObjectMapper objectMapper = new ObjectMapper();

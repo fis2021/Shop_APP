@@ -5,6 +5,7 @@ public class User {
     private String username;
     private String password;
     private String role;
+    private float balance=0;
 
     public User() {
     }
@@ -34,6 +35,8 @@ public class User {
     public String getRole() {
         return role;
     }
+
+    public float getBalance() {return balance;}
 
     public void setRole(String role) {
         this.role = role;
@@ -65,6 +68,11 @@ public class User {
                 "username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", role='" + role + '\'' +
+                ", balance='" + balance + '\'' +
                 '}';
+    }
+
+    public void setBalance(float balance) {
+        this.balance = balance;
     }
 }
