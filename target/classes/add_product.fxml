@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="mainwindow" prefHeight="359.0" prefWidth="487.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jpm.controllers.AddProductController">
+   <children>
+      <TextField fx:id="name" layoutX="114.0" layoutY="50.0" prefWidth="340.0" promptText="Nume produs" />
+      <TextField fx:id="image" layoutX="114.0" layoutY="84.0" prefWidth="340.0" promptText="Imaginea Produsului" />
+      <TextField fx:id="price" layoutX="114.0" layoutY="273.0" prefHeight="6.0" prefWidth="340.0" />
+      <Button layoutX="335.0" layoutY="310.0" mnemonicParsing="false" onAction="#ConfirmButton" text="Confirm" />
+      <Button layoutX="402.0" layoutY="310.0" mnemonicParsing="false" onAction="#CancelButton" text="Cancel" />
+      <Text layoutX="30.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nume Produs" wrappingWidth="74.5390625" />
+      <Text layoutX="30.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Imagine" textAlignment="RIGHT" wrappingWidth="74.5390625" />
+      <Text layoutX="30.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Descriere" textAlignment="RIGHT" wrappingWidth="74.5390625" />
+      <Text layoutX="30.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pret" textAlignment="RIGHT" wrappingWidth="74.5390625" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="39.0" stroke="BLACK" strokeType="INSIDE" width="487.0" />
+      <Text fill="WHITE" layoutX="23.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Adauga Produs" />
+      <TextArea fx:id="description" layoutX="114.0" layoutY="117.0" prefHeight="148.0" prefWidth="340.0" promptText="Adauga descrierea ta...." wrapText="true" />
+   </children>
+</AnchorPane>

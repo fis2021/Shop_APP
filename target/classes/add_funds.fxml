@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="mainwindow" prefHeight="124.0" prefWidth="280.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jpm.controllers.AddFundsController">
+   <children>
+      <Button layoutX="124.0" layoutY="70.0" mnemonicParsing="false" onAction="#updateFunds" text="Confirm" />
+      <Button layoutX="190.0" layoutY="70.0" mnemonicParsing="false" onAction="#handleClose" text="Cancel" />
+      <TextField fx:id="funds" layoutX="91.0" layoutY="35.0" promptText="Insert number here." />
+      <Text layoutX="39.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Funds" />
+   </children>
+</AnchorPane>
