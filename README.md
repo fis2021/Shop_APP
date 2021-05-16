@@ -5,9 +5,13 @@ Aplicatia de cumpărare / vânzare
 Membri echipei: Janțu Petre-Marin , Darjan Paunovic
 
 Tecnologi folosite
+
 Java 16
+
 JavaFX 16 (as GUI)
+
 Maven (Build Tool)
+
 Json Type (as local database)
 
 Descriere generala: 
