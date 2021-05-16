@@ -4,6 +4,12 @@ Aplicatia de cumpărare / vânzare
 
 Membri echipei: Janțu Petre-Marin , Darjan Paunovic
 
+Tecnologi folosite
+Java 16
+JavaFX 16 (as GUI)
+Maven (Build Tool)
+Json Type (as local database)
+
 Descriere generala: 
 Această aplicaţie ar trebui să ajute utilizatori sa poata sa isi expuna produsele spre vanzare
 mai usor si tot odata cumparatori sa achizitioneze de ei tot prin intermediul aplicatiei.
