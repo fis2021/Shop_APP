@@ -9,7 +9,5 @@ public class ProductsAlreadyExistsException extends Exception{
         this.productname = productname;
     }
 
-    public String getUsername() {
-        return productname;
-    }
+
 }

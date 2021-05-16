@@ -53,6 +53,8 @@ public class Product {
         this.price = price;
     }
 
+
+
     public void setProduct_description(String product_description) {
         this.product_description = product_description;
     }

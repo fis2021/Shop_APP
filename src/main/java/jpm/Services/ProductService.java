@@ -42,11 +42,24 @@ public class ProductService {
         Products.add(new Product(product_name,product_description,path_to_image,price,owner));
         persistProduct();
     }
+    public static void removeProduct (Product Product) throws CouldNotWriteUsersException
+    {
+        Products.remove(Product);
+        persistProduct();
+    }
 
     private static void checkProductDoesNotAlreadyExist(String productname,String productowner) throws ProductsAlreadyExistsException {
         for (Product product : Products) {
             if (Objects.equals(productname, product.getProduct_name()) && Objects.equals(productowner,product.getOwner()))
                 throw new ProductsAlreadyExistsException(productname);
+        }
+    }
+
+    public static void editProduct(Product prod,String product_name, String product_description, String path_to_image, float price, String owner) throws CouldNotWriteUsersException {
+        for (Product product : Products) {
+            if (Objects.equals(product,prod)){prod.setProduct_name(product_name);prod.setProduct_description(product_description);prod.setPrice(price);prod.setOwner(owner);prod.setPath_to_image(path_to_image);persistProduct();}
+                throw new CouldNotWriteUsersException();
+
         }
     }
 

@@ -32,6 +32,9 @@ import jpm.model.Product;
 import jpm.Services.ProductService.*;
 import jpm.model.User;
 import org.apache.commons.io.FileUtils;
+import jpm.controllers.ElementController;
+import static jpm.controllers.ElementController.getProduct;
+import static jpm.controllers.ElementController.prod;
 
 
 public class ListElementController implements Initializable {
@@ -39,6 +42,7 @@ public class ListElementController implements Initializable {
     private VBox itemHolder;
     @FXML
     private ScrollPane scrollPane;
+
 
     private static List<Product> products;
     private static final Path PRODUCT_PATH = FileSystemService.getPathToFile("config","products.json");
@@ -56,21 +60,21 @@ public class ListElementController implements Initializable {
     }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        //build nodes
-
         try {
             loadProductsFromFile();
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-
         int i = 0;
             for (Product product : products) {
                 try {
                     final int j = i;
                     Node[] nodes = new Node[20];
+                    //get_ready_to_creat_list_element(product);
+                    getProduct(product);
                     nodes[i] = FXMLLoader.load(getClass().getClassLoader().getResource("list_element.fxml"));
+
                     //mouseover effect
                     nodes[i].setOnMouseEntered(new EventHandler<MouseEvent>() {
                         @Override
